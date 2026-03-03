@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F2D0D3;
+    padding: 30px 20px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Container chính chia 3 cột */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Cột sidebar trái và phải - mỗi bên 2 ảnh */
+.sidebar {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center; /* Căn giữa các ảnh theo chiều dọc */
+}
+
+/* Ảnh trang trí - tất cả đều bằng nhau */
+.decor-image {
+    width: 100%;
+    aspect-ratio: 1/1; /* Tỷ lệ 1:1 - hình vuông */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(242, 167, 173, 0.2);
+    border: 3px solid #F2A7AD;
+    background: white;
+}
+
+.decor-image:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 15px 30px rgba(242, 167, 173, 0.4);
+    border-color: #F2A2C0;
+}
+
+.decor-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ảnh phủ đầy khung */
+}
+
+/* Cột nội dung chính giữa */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Khung nội dung */
+.content {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid #F2A7AD;
+    box-shadow: 0 10px 30px rgba(242, 167, 173, 0.2);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F2A7AD;
+}
+
+h1 {
+    color: #F2A2C0;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    color: #F2A7AD;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.subtitle i {
+    margin-right: 5px;
+}
+
+.contact {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.contact i {
+    color: #F2A7AD;
+    margin-right: 5px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #F2A2C0;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 5px solid #F2A7AD;
+    padding-left: 15px;
+}
+
+h2 i {
+    color: #F2A7AD;
+    font-size: 1.3rem;
+}
+
+/* Hiệu ứng xuất hiện */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Goals */
+.goals-list p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.98rem;
+    padding-left: 5px;
+}
+
+.goal-label {
+    color: #F2A7AD;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 150px;
+}
+
+/* Timeline */
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 12px 15px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+    border-left: 4px solid transparent;
+}
+
+.timeline-item:hover {
+    background: #F2E9E9;
+    transform: translateX(10px);
+    border-left-color: #F2A7AD;
+}
+
+.timeline-date {
+    min-width: 140px;
+    font-weight: 500;
+    color: #F2A7AD;
+}
+
+.timeline-content h3 {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.company {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Education */
+.edu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 15px;
+    background: #F2E9E9;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #F2D0D3;
+    margin-bottom: 20px;
+}
+
+.edu-item:hover {
+    transform: scale(1.02);
+    border-color: #F2A7AD;
+}
+
+.edu-item i {
+    font-size: 1.6rem;
+    color: #F2A7AD;
+}
+
+/* Certificates */
+.certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cert-badge {
+    background: #F2E9E9;
+    color: #F2A2C0;
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    border: 1px solid #F2D0D3;
+    transition: all 0.2s ease;
+}
+
+.cert-badge:hover {
+    transform: translateY(-3px);
+    border-color: #F2A7AD;
+    box-shadow: 0 5px 10px rgba(242,167,173,0.2);
+}
+
+/* Activities */
+.activities-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: default;
+    border-bottom: 1px dashed #F2D0D3;
+}
+
+.activity-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.activity-info i {
+    color: #F2A7AD;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.activity-info span {
+    color: #555;
+    font-size: 0.98rem;
+    transition: all 0.2s ease;
+}
+
+.activity-image {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    margin-left: 15px;
+}
+
+.activity-image img {
+    width: 160px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(242,167,173,0.3);
+    border: 2px solid #F2A7AD;
+}
+
+.activity-item:hover {
+    background: #F2E9E9;
+    transform: translateX(8px);
+}
+
+.activity-item:hover .activity-info i {
+    transform: translateX(5px);
+    color: #F2A2C0;
+}
+
+.activity-item:hover .activity-info span {
+    color: #F2A7AD;
+    font-weight: 500;
+}
+
+.activity-item:hover .activity-image {
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background: #F2A7AD;
+    color: white;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(242,167,173,0.2);
+}
+
+.skill-tag:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 18px rgba(242,167,173,0.4);
+    background: #F2A2C0;
+}
+
+/* Contact */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.3rem;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 3rem;
+    height: 3rem;
+    background: #F2E9E9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F2A7AD;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid #F2D0D3;
+}
+
+.contact-icon:hover {
+    background: #F2A7AD;
+    color: white;
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 10px 20px rgba(242,167,173,0.4);
+    border-color: white;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #F2D0D3;
+    text-align: center;
+    color: #F2A2C0;
+    font-size: 0.9rem;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        flex: 0 0 auto;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .decor-image {
+        width: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    body { padding: 15px 10px; }
+    .content { padding: 25px; }
+    
+    h1 { font-size: 1.8rem; }
+    
+    .timeline-item { flex-direction: column; gap: 5px; }
+    .timeline-date { min-width: auto; }
+    
+    .activity-item { flex-direction: column; align-items: flex-start; }
+    .activity-image { width: 100%; margin-left: 0; }
+    .activity-image img { width: 100%; height: auto; max-height: 130px; }
+    
+    .goal-label { display: block; margin-bottom: 3px; }
+    
+    .decor-image {
+        width: 100px;
+    }
+}
